@@ -25,9 +25,12 @@ const LonginFrom = () => {
         };
       case "INCREMENT":
         return {
-            ...state,
-            state 
-        }
+          quantity: state.quantity + 1 
+        };
+      case "DECREMENT":
+        return {
+          quantity: state.quantity - 1 
+        };
       default:
         return state;
     }
@@ -180,7 +183,7 @@ const LonginFrom = () => {
         <div className="flex flex-col w-full max-w-xs">
           <label className="mb-3">Number of PCs</label>
           <div className="flex justify-between items-center gap-2 ">
-            <button className="bg-indigo-500 text-lg text-white rounded h-10 w-10 ">
+            <button className="bg-indigo-500 text-lg text-white rounded h-10 w-10 " onClick={()=> dispatch({type: "DECREMENT"})}>
               -
             </button>
             <div className="border flex-1 flex justify-center items-center h-10 rounded-md border-gray-300">
